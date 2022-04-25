@@ -32,7 +32,7 @@ def main():
                 return
         win32gui.EnumWindows(window_handler, None)
         if keyboard.is_pressed("k"):
-            if time_since_last_change < time.time() - 250:
+            if time_since_last_change < time.time_ns() - 250000000:
                 currently_hidden = not currently_hidden
                 time_since_last_change = time.time_ns()
 
